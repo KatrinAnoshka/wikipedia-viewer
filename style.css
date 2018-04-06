@@ -1,0 +1,428 @@
+body { 
+  background-color: #eae8db; 
+}
+
+*, *:before, *:after { 
+  -webkit-box-sizing: border-box; 
+          box-sizing: border-box; 
+}
+
+.content-wrap {
+  margin-top: 40px;
+}
+
+/*Header*/
+h1 {
+  font-size: 58px;
+  font-weight: 700;
+  color: #6c7690;
+  font-family: 'Open sans', sans-serif;
+  text-shadow: black 2px -1px;
+}
+
+#search {
+  width: 300px;
+  height: 30px;
+  padding-left: 10px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  outline: none;
+}
+
+.btn-default {
+  margin: 4px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  color: #fff;
+  -webkit-box-shadow: gray 2px -2px;
+          box-shadow: gray 2px -2px;
+}
+
+.btn-default:hover {
+  opacity: 0.8;
+  color: #fff;
+  padding: 6px 10px;
+}
+
+button {
+  width: 122px;
+  background-color: #d23d21 !important;
+  outline: none !important;
+}
+
+#randomResult {
+  display: inline-block;
+  width: 165px;
+  background-color: #e1914c !important;
+  outline: none !important;
+}
+
+/*Common features of book*/
+.book {
+  position: relative;
+  width: 400px;
+  height: 520px;
+  margin: 45px auto;
+  overflow: visible;
+  -webkit-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.cover, .page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+          box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
+}
+
+/*Cover book*/
+.cover {
+  z-index: 100;
+  -webkit-transform: perspective(700px) rotateY(0deg);
+          transform: perspective(700px) rotateY(0deg);
+  background: #621f23
+              -webkit-gradient(linear, 
+              left top, right top, 
+              color-stop(3%, transparent), 
+              color-stop(5%, rgba(0,0,0,0.1)), 
+              color-stop(6%, transparent));
+  background: #621f23
+              -webkit-linear-gradient(left, 
+              transparent 3%, 
+              rgba(0,0,0,0.1) 5%, 
+              transparent 6%);
+  background: #621f23
+              -o-linear-gradient(left, 
+              transparent 3%, 
+              rgba(0,0,0,0.1) 5%, 
+              transparent 6%);
+  background: #621f23
+              linear-gradient(90deg, 
+              transparent 3%, 
+              rgba(0,0,0,0.1) 5%, 
+              transparent 6%);
+} 
+
+.cover h2 {
+  font-size: 52px;
+  font-family: Georgia;
+  letter-spacing: 5px;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.cover img {
+  padding-top: 30px;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: Georgia;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff; 
+  position: relative;
+}
+
+h3::after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  background-color: #fff;
+  width: 283px;
+  display: block;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+/*Logotip*/
+.developer {
+  position: absolute;
+  display: block;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  bottom: 0;
+}
+
+img.logo-footer {
+  padding: 15px 0;
+  float: left;
+}
+
+.dev {
+  display: inline-block;
+  padding: 5px 10px 5px; 
+  margin-top: 10px;
+}
+
+.developer .created {
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.dev:hover {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: underline; 
+}
+
+/*Open book*/
+.page {
+  padding: 17px;
+  color: #222;
+}  
+ /*border-left of open book */
+.page::before {
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.1);
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+}
+/*border-bottom of open book */
+.page::after {
+  content: '';
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: solid 0px transparent;
+  border-top-color: rgba(0,0,0,0.2);
+  -webkit-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+  -webkit-box-shadow: 2px 0px 0px 0px gray;
+          box-shadow: 2px 0px 0px 0px gray;
+}
+
+.page:nth-child(2) {
+  -webkit-transform: perspective(700px) 
+             rotateY(180deg) 
+             translateX(-100%);
+          transform: perspective(700px) 
+             rotateY(180deg) 
+             translateX(-100%);
+  background: #fff 
+              -webkit-gradient(linear, 
+              left top, right top, 
+              color-stop(97%, rgba(0,0,0,0)), 
+              to(rgba(0,0,0,0.1)));
+  background: #fff 
+              -webkit-linear-gradient(left, 
+              rgba(0,0,0,0) 97%, 
+              rgba(0,0,0,0.1) 100%);
+  background: #fff 
+              -o-linear-gradient(left, 
+              rgba(0,0,0,0) 97%, 
+              rgba(0,0,0,0.1) 100%);
+  background: #fff 
+              linear-gradient(90deg, 
+              rgba(0,0,0,0) 97%, 
+              rgba(0,0,0,0.1) 100%);
+  -webkit-box-shadow: -1px 1px 2px 0px rgba(0,0,0,0.2);
+          box-shadow: -1px 1px 2px 0px rgba(0,0,0,0.2);
+}
+
+.page:nth-child(2)::before { left: 0; }
+.page:nth-child(2)::after  { left: 1px; }
+
+.page:nth-child(3) {
+  background: #fff 
+              -webkit-gradient(linear, 
+              left top, right top, 
+              from(rgba(0,0,0,0.1)), 
+              color-stop(3%, rgba(0,0,0,0)));
+  background: #fff 
+              -webkit-linear-gradient(left, 
+              rgba(0,0,0,0.1) 0%, 
+              rgba(0,0,0,0) 3%);
+  background: #fff 
+              -o-linear-gradient(left, 
+              rgba(0,0,0,0.1) 0%, 
+              rgba(0,0,0,0) 3%);
+  background: #fff 
+              linear-gradient(90deg, 
+              rgba(0,0,0,0.1) 0%, 
+              rgba(0,0,0,0) 3%);
+  border-left: solid 1px rgba(0,0,0,0.2);
+}
+
+.page:nth-child(3)::before { right: 0; }
+.page:nth-child(3)::after  { left: -1px; }
+
+h4 {
+  margin: 0 0 0.6em 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #621f23;
+  font-family: "Open Sans", sans-serif;
+  line-height: 12px;
+  text-align: center;
+  padding-top: 10px;
+}  
+    
+p.text:first-letter {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    line-height: 0.6em;
+    color: #621f23;
+    padding: 5px 2px 0 0;
+    float: left;
+}
+  
+.page p {  
+  text-align: justify;
+  margin: 0 0 0.5em;
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 13px;
+}
+
+p.top-page {
+  font-size: 9px;
+  color: gray;
+  position: relative;
+  padding-bottom: 0;
+}
+    
+hr {
+  border: none; /* Убираем границу */
+  background-color: gray; /* Цвет линии */
+  color: gray; /* Цвет линии для IE6-7 */
+  height: 1px; /* Толщина линии */
+  margin: 0;
+}
+
+/*openning the book*/
+.open {
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%);
+}
+.open .cover {
+  -webkit-transform: perspective(700px)
+               rotateY(-180deg);
+          transform: perspective(700px)
+               rotateY(-180deg);
+}
+.open .page:nth-child(2) {
+  z-index: 200;
+  -webkit-transform: perspective(700px) 
+              rotateY(0deg)
+              translateX(-100%);
+          transform: perspective(700px) 
+              rotateY(0deg)
+              translateX(-100%);
+}
+
+.open .page::before {
+      width: 3px;
+}
+
+.open .page::after {
+      border-width: 2px;
+      bottom: -3px;
+}
+  
+/*text in book*/
+a {
+  display: block;
+  margin: 10px 0;
+  text-align: justify;
+  color: #000;
+  border-radius: 5px;
+}
+
+ul a:hover {
+  color: #000;
+  text-decoration: none;
+  background-color: #eae8db;
+  padding: 0 10px;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-family: 'Georgia';
+}
+
+.text {
+  font-size: 13px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+ul.page1 {
+  list-style-type: none;
+  padding: 0; 
+  padding-left: 10px;
+}
+
+ul.page2 {
+  list-style-type: none;
+  padding: 0;
+  padding-right: 10px;     
+}
+
+/*pages on top of the cover*/
+.book-top {
+  background-color: #EEEEEE;
+  border-left: 5px solid #621f23;
+  border-top: 2px solid #621f23;
+  -webkit-box-shadow: 1px 0px 2px #999;
+          box-shadow: 1px 0px 2px #999;
+  height: 8px;
+  left: 5px;
+  position: absolute;
+  top: -10px;
+  width: 401px;
+  transform: skew(-45deg, 0deg);
+  -ms-transform: skew(-45deg, 0deg);
+  -webkit-transform: skew(-45deg, 0deg);
+  opacity: 0.8;
+}
+
+/*pages on right of the cover*/
+.book-right {
+  background-color: #EEEEEE;
+  border-bottom: 1px solid #DDDDDD;
+  border-right: 2px solid #621f23;
+  -webkit-box-shadow: 1px 0px 1px #999;
+          box-shadow: 1px 0px 1px #999;
+  height: 520px;
+  position: absolute;
+  right: -10px;
+  top: -4px;
+  width: 11px;
+  transform: skew(0deg, -45deg);
+  -ms-transform: skew(0deg, -45deg);
+  -webkit-transform: skew(0deg, -45deg);
+  opacity: 0.8;
+}
